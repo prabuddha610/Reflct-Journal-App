@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       Hello
       <br/>
-      <Button variant="outline">Button</Button>
+      <Button variant="journal">Button</Button>
     </div>
   );
 }
