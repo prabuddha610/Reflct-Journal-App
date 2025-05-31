@@ -1,7 +1,29 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Calendar, ChevronRight } from "lucide-react";
+import { Book, Calendar, ChevronRight, Lock, Sparkles } from "lucide-react";
 import Link from "next/link";
+
+const features = [
+  {
+    icon: Book,
+    title: "Rich Text Editor",
+    description:
+      "Express yourself with a powerful editor supporting markdown, formatting, and more.",
+  },
+  {
+    icon: Sparkles,
+    title: "Daily Inspiration",
+    description:
+      "Get inspired with daily prompts and mood-based imagery to spark your creativity.",
+  },
+  {
+    icon: Lock,
+    title: "Secure & Private",
+    description:
+      "Your thoughts are safe with enterprise-grade security and privacy features.",
+  },
+];
 
 export default function Home() {
   return (
@@ -15,7 +37,6 @@ export default function Home() {
           Capture your thoughts, track your moods, and reflect on your journey
           in a beautiful, secure space.
         </p>
-
 
         <div className="relative mb-12">
           <div className="bg-gradient-to-t from-orange-50 via-transparent to-transparent">
@@ -46,7 +67,6 @@ export default function Home() {
           </div>
         </div>
 
-
         <div className="flex justify-center gap-4">
           <Link href="/dashboard">
             <Button
@@ -66,6 +86,25 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
+      <section
+        id="features"
+        className="mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {features.map((feature, index) => (
+          <Card key={index} className="shadow-lg">
+            <CardContent className="p-6">
+              <div className="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                <feature.icon className="h-6 w-6 text-orange-600" />
+              </div>
+              <h3 className="font-semibold text-xl text-orange-900 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-orange-700">{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
     </div>
   );
 }
