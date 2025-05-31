@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Calendar } from "lucide-react";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
           in a beautiful, secure space.
         </p>
         <div className="relative">
-          <div>
+          <div className="absolute inset-0 bg-gradient-to-t from-orange-50 via-transparent to-transparent pointer-events-none">
             <div className="bg-white rounded-2xl p-4 max-full max-auto">
               <div className="border-b border-orange-100 pb-4 mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -30,8 +31,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
-                <h3></h3>
+              <div className="space-y-4 p-4">
+                <h3 className="text-xl font-semibold text-orange-900">Daily Prompts</h3>
+                <Skeleton className='h-4 bg-orange-100 rounded w-3/4'/>
+                <Skeleton className='h-4 bg-orange-100 rounded w-full'/>
+                <Skeleton className='h-4 bg-orange-100 rounded w-2/3'/>
               </div>
             </div>
           </div>
