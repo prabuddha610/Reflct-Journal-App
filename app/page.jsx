@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Book, Calendar, ChevronRight, FileText, Lock, Sparkles } from "lucide-react";
+import { BarChart2, Book, Calendar, ChevronRight, FileText, Lock, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const features = [
@@ -139,6 +139,38 @@ export default function Home() {
             <div className="h-4 bg-orange-50 rounded w-full"></div>
             <div className="h-4 bg-orange-50 rounded w-2/3"></div>
             <div className="h-4 bg-orange-50 rounded w-1/3"></div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 md:flex-row-reverse">
+          <div className="space-y-6 md:order-2">
+            <div className="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center">
+              <BarChart2 className="h-6 w-6 text-orange-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-orange-900">
+              Mood Analytics
+            </h3>
+            <p className="text-lg text-orange-700">
+              Track your emotional journey with powerful analytics:
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-orange-400" />
+                <span>Visual mood trends</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-orange-400" />
+                <span>Pattern recognition</span>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-4 bg-white rounded-2xl shadow-xl p-6 border border-orange-100 md:order-1">
+            <div className="h-40 bg-gradient-to-t from-orange-100 to-orange-50 rounded-lg"></div>
+            <div className="flex justify-between">
+              <div className="h-4 w-16 bg-orange-100 rounded"></div>
+              <div className="h-4 w-16 bg-orange-100 rounded"></div>
+              <div className="h-4 w-16 bg-orange-100 rounded"></div>
+            </div>
           </div>
         </div>
       </div>
