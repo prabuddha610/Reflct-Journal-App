@@ -1,3 +1,4 @@
+import TestimonialCarousel from "@/components/testimonial-carousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -129,7 +130,6 @@ export default function Home() {
             </ul>
           </div>
           <div className="space-y-4 bg-white rounded-2xl shadow-xl p-6 border border-orange-100">
-
             <div className="flex gap-2 mb-6">
               <div className="h-8 w-8 rounded bg-orange-100"></div>
               <div className="h-8 w-8 rounded bg-orange-100"></div>
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </div>
 
-      
+    <TestimonialCarousel />
     </div>
   );
 }
