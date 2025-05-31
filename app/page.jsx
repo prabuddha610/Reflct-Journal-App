@@ -29,8 +29,8 @@ const features = [
   },
 ];
 
-export default function Home() {
-  
+export default async function Home() {
+  const advice = await getDailyPrompt();
   return (
     <div className="relative container mx-auto px-4 pt-16 pb-16">
       <div className="max-w-5xl mx-auto text-center space-y-8">
