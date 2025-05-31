@@ -56,7 +56,14 @@ export default function Home() {
               Start Writing <ChevronRight className="h-5 w-5" />
             </Button>
           </Link>
-          
+          <Link href="#features">
+            <Button
+              variant="outline"
+              className="px-8 py-6 rounded-full border-orange-600 text-orange-600 hover:bg-orange-100"
+            >
+              Learn More
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
