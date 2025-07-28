@@ -1,9 +1,14 @@
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
+import React from "react";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { PenBox, FolderOpen } from "lucide-react";
+import Image from "next/image";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import UserMenu from "./user-menu";
+
 
 const Header = () => {
+
   return (
     <header className="container mx-auto">
       <nav className="py-6 px-4 flex justify-between items-center">
@@ -16,18 +21,28 @@ const Header = () => {
             className="h-10 w-auto object-contain"
           />
         </Link>
-
         <div className="flex items-center gap-4">
+          <SignedIn>
+            <Link href="/dashboard#collections">
+              <Button variant="outline" className="flex items-center gap-2">
+                <FolderOpen size={18} />
+                <span className="hidden md:inline">Collections</span>
+              </Button>
+            </Link>
+          </SignedIn>
+          <Link href="/journal/write">
+            <Button variant="journal" className="flex items-center gap-2">
+              <PenBox size={18} />
+              <span className="hidden md:inline">Write New</span>
+            </Button>
+          </Link>
           <SignedOut>
-            <SignInButton />
-            <SignUpButton>
-              <button className="bg-[#6c47ff] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                Sign Up
-              </button>
-            </SignUpButton>
+            <SignInButton forceRedirectUrl="/dashboard">
+              <Button variant="outline">Login</Button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <UserMenu />
           </SignedIn>
         </div>
       </nav>
@@ -35,4 +50,4 @@ const Header = () => {
   );
 }
 
-export default Header
+export default Header;
