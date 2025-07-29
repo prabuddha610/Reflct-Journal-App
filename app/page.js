@@ -19,6 +19,7 @@ import {
 import TestimonialCarousel from "@/components/testimonial-carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import { getDailyPrompt } from "@/actions/public";
 import faqs from "@/data/faqs";
 
 const features = [
@@ -42,8 +43,8 @@ const features = [
   },
 ];
 
-export default function LandingPage() {
-
+export default async function LandingPage() {
+  const advice = await getDailyPrompt();
 
   return (
     <div className="relative container mx-auto px-4 pt-16 pb-16">
@@ -74,7 +75,7 @@ export default function LandingPage() {
             </div>
             <div className="space-y-4 p-4">
               <h3 className="text-xl font-semibold text-orange-900">
-                { "My Thoughts Today"}
+                {advice ? advice : "My Thoughts Today"}
               </h3>
               <Skeleton className="h-4 bg-orange-100 rounded w-3/4" />
               <Skeleton className="h-4 bg-orange-100 rounded w-full" />
